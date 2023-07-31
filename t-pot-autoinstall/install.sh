@@ -1,7 +1,7 @@
 #!/bin/bash
 ##########################################################
 # T-Pot 17.10 install script                             #
-# Ubuntu server 16.04.0x, x64                            #
+# Ubuntu server 22.04.0x, x64                            #
 #                                                        #
 # v1.2 by av, DTAG 2017-11-13                            #
 #                                                        #
@@ -38,7 +38,7 @@ fuECHO ""
 echo "
 ##########################################################
 # T-Pot 17.10 install script                             #
-# for Ubuntu server 16.04.0x, x64                        #
+# for Ubuntu server 22.04.0x, x64                        #
 ##########################################################
 Make sure the key-based SSH login for your normal user is working!
 "
@@ -149,11 +149,11 @@ if ! fgrep -q "PubkeyAuthentication yes" /etc/ssh/sshd_config
 		exit 1
 fi
 
-# check for ubuntu 16.04. distribution
+# check for ubuntu 22.04. distribution
 release=$(lsb_release -r|cut -d $'\t' -f2)
 if [ $release != "22.04" ]
     then
-        fuECHO "### Wrong distribution. Must be Ubuntu 16.04.*. Script will abort! "
+        fuECHO "### Wrong distribution. Must be Ubuntu 22.04.*. Script will abort! "
         exit 1
 fi
 
